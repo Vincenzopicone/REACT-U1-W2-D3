@@ -1,5 +1,5 @@
 const Section = () => (
-    <div className="d-flex justify-content-between">
+    <div className="d-flex justify-content-between px-4">
           <div className="d-flex">
             <h2 className="mb-4">TV Shows</h2>
             <div className="dropdown ml-4 mt-1">
