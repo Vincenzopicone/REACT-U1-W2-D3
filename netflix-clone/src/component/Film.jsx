@@ -6,7 +6,7 @@ import Galleria from "./Galleria";
 class Film extends Component {
     render() {
         return (
-        <div class="container-fluid px-4">
+        <div>
            <Container nameCategory="Harry Potter"/>    
            <Galleria film={"Harry Potter"}/>
            <Container  nameCategory="Lord of the Rings"/>  

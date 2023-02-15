@@ -68,7 +68,7 @@ const CommentArea = (props) => {
         {isLoading && <Loading />}
         {isError && <Error />}
         <CommentList commentsToShow={commenti} />
-        <AddComment asin={props.imdbID}/>
+        <AddComment imdbID={props.imdbID}/>
       </div>
     )
   }

@@ -14,13 +14,13 @@ const AddComment = (props) => {
   const [comment, setComment] = useState ({
     comment: "",
     rate: 1,
-    elementId: props.asin,
+    elementId: props.imdbID,
   });
 
 
   useEffect(()=> {
-    setComment({...comment, elementId: props.asin});
-  }, [props.asin]);
+    setComment({...comment, elementId: props.imdbID});
+  }, [props.imdbID]);
   /*   const [rate, setRate] = useState (1)
   const [elementId, setElementId] = useState (props.asin) */
 
@@ -47,7 +47,7 @@ const AddComment = (props) => {
           ...comment,
           comment:"",
           rate:1,
-          elementId: props.asin,
+          elementId: props.imdbID,
         })
 
 

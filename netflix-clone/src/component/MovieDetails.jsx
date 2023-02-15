@@ -1,7 +1,9 @@
 import {/*  Link, */ useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
+import {Row, Col} from "react-bootstrap"
 import ListGroup from 'react-bootstrap/ListGroup';
+import CommentArea from "./CommentArea";
 /* import CommentArea from "./CommentArea"; */
 
 const MovieDetails = () => {
@@ -38,30 +40,30 @@ const MovieDetails = () => {
     return (
         <>
         {movie && (
-            <section className="p-5">
-            <section>
+            <Row className="justify-content-center p-5 m-0 ">
+            <Col xs={12} md={4} className="text-center">
                <Card style={{ width: '18rem' }}>
-                 <Card.Img variant="top" src={movie.Poster}/>
-                 <Card.Body>
-                 <Card.Title>{movie.Title}</Card.Title>
-                 <Card.Text>{movie.Plot}</Card.Text>
-                </Card.Body>
-                <ListGroup className="list-group-flush">
-                <ListGroup.Item>Actors: {movie.Actors}</ListGroup.Item>
-                <ListGroup.Item>Year: {movie.Year}</ListGroup.Item>
-                <ListGroup.Item>Realeased: {movie.Released}</ListGroup.Item>
-                <ListGroup.Item>Writer: {movie.Writer}</ListGroup.Item>
-               </ListGroup>
-               <Card.Body>
+                 <Card.Img variant="top" src={movie.Poster}/>               
+               {/* <Card.Body>
                <Card.Link href="#">Card Link</Card.Link>
                <Card.Link href="#">Another Link</Card.Link>
-               </Card.Body>
+               </Card.Body > */}
                 </Card>
-            </section>
-            <section>
-        {/*         <CommentArea imdbID={movie.imdbID}/> */}
-            </section>
-            </section>
+            </Col>
+            <Col  xs={12} md={4} className="m-0 p-0">
+            <ListGroup className="list-group-flush">
+                <ListGroup.Item><h2 className="text-dark"><strong> {movie.Title}</strong> </h2></ListGroup.Item>
+                <ListGroup.Item>{movie.Plot}</ListGroup.Item>
+                <ListGroup.Item> <strong> Actors: </strong> {movie.Actors}</ListGroup.Item>
+                <ListGroup.Item><strong> Year: </strong> {movie.Year}</ListGroup.Item>
+                <ListGroup.Item><strong>Realeased:</strong> {movie.Released}</ListGroup.Item>
+                <ListGroup.Item><strong>Writer:</strong> {movie.Writer}</ListGroup.Item>
+               </ListGroup>
+            </Col>
+            <Col xs={12} md={4}>
+                <CommentArea imdbID={params.movieID}></CommentArea>
+            </Col>
+            </Row>
         )}
         </>
     )
